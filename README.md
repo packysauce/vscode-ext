@@ -10,9 +10,10 @@
 ## todo list
 
 - [X] add a command to the command palette
+  [X] call vscode api from rust
 - [ ] add a web view
   - [ ] add canvas to web view
   - [ ] doodle on web view with WGPU
-- [ ] webpack extension inspires the imagination
-  - [ ] add watchers to the rust
+- [ ] wasm-pack-plugin ...inspires the imagination
+  - [ ] add watchers for the rust
   - [ ] better imports?
