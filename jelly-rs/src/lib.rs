@@ -6,15 +6,23 @@ use wasm_bindgen::prelude::*;
 #[global_allocator]
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
-#[wasm_bindgen(module = "vscode")]
-extern "C" {
-    // lug in vscode.window.showInformationMessage
-    // module is vscode, namespace is window, function is showInformationMessage
-    #[wasm_bindgen(js_namespace = window)]
-    fn showInformationMessage(s: &str);
+pub mod vscode {
+    use super::*;
+
+    pub mod window {
+        use super::*;
+
+        #[wasm_bindgen(module = "vscode")]
+        extern "C" {
+            // lug in vscode.window.showInformationMessage
+            // module is vscode, namespace is window, function is showInformationMessage
+            #[wasm_bindgen(js_namespace = window)]
+            pub fn showInformationMessage(s: &str);
+        }
+    }
 }
 
 #[wasm_bindgen]
 pub fn greet(name: &str) {
-    showInformationMessage(&format!("Hello, {}!", name));
+    vscode::window::showInformationMessage(&format!("Hello, {}!", name));
 }
