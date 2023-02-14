@@ -10,14 +10,48 @@ export async function activate(context: vscode.ExtensionContext) {
 	console.log('Congratulations, your extension "vscode-jelly" is now active!');
 	const jelly = await import('../dist/jelly-rs');
 
+	// Canvas view
+	const canvas = vscode.window.createWebviewPanel(
+		"jelly",
+		"Jelly",
+		vscode.ViewColumn.One,
+		{
+			enableScripts: true,
+			enableCommandUris: true,
+			retainContextWhenHidden: true,
+		}
+	);
+	canvas.webview.html = `
+		<!DOCTYPE html>
+		<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>Jelly</title>
+		</head>
+		<body>
+			<canvas id="canvas"></canvas>
+			<script>
+				const canvas = document.querySelector('#canvas');
+				const ctx = canvas.getContext('2d');
+				ctx.fillStyle = 'green';
+				ctx.fillRect(0, 0, 100, 100);
+			</script>
+		</body>
+		</html>
+	`;
+
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
 	// The commandId parameter must match the command field in package.json
-	const disposable = vscode.commands.registerCommand('vscode-jelly.helloWorld', () => {
-		jelly.greet("Hello World");
-	});
-
-	context.subscriptions.push(disposable);
+	[
+		vscode.commands.registerCommand('vscode-jelly.showCanvas', () => {
+			canvas.reveal();
+		}),
+		vscode.commands.registerCommand('vscode-jelly.helloWorld', () => {
+			jelly.greet("Hello World");
+		}),
+	].forEach((d) => context.subscriptions.push(d));
 }
 
 // This method is called when your extension is deactivated

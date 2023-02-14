@@ -14,7 +14,11 @@
     "commands": [
       {
         "command": "vscode-jelly.helloWorld",
-        "title": "Hello World"
+        "title": "Jelly: Hello World"
+      },
+      {
+        "command": "vscode-jelly.showCanvas",
+        "title": "Jelly: Show Canvas"
       }
     ]
   },

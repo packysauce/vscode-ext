@@ -4,20 +4,6 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"type": "cargo",
-			"options": {
-				"cwd": "${workspaceFolder}/jelly-rs"
-			},
-			"command": "watch",
-			"args": [
-				"-x", "build",
-				"--watch-when-idle"
-			],
-			"problemMatcher": "$rustc",
-			"isBackground": true,
-			"group": "build"
-		},
-		{
 			"type": "npm",
 			"script": "watch",
 			"problemMatcher": "$ts-webpack-watch",
@@ -45,6 +31,14 @@
 				"npm: watch-tests"
 			],
 			"problemMatcher": []
+		},
+		{
+			"type": "npm",
+			"script": "compile",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: compile",
+			"detail": "webpack"
 		}
 	]
 }
