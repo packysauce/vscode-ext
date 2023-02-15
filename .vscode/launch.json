@@ -6,6 +6,14 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
+			"type": "lldb-mi",
+			"request": "launch",
+			"name": "Launch TS2RS",
+			"target": "${workspaceFolder}/jelly-rs/target/debug/ts2rs",
+			"cwd": "${workspaceRoot}",
+			"valuesFormatting": "parseText"
+		},
+		{
 			"name": "Run Current File (TS-Node)",
 			"type": "node",
 			"request": "launch",

@@ -158,7 +158,7 @@ function txModule(module: ts.Node, w: Writer): ts.Node {
         return `${param.name.getText()}: ${type}`;
       });
       const ret = txTypeNode(child.type!);
-      body.push(`pub fn ${child.name.getText()}(${params.join(", ")}) -> ${ret};`);
+      body.push(`pub fn ${child.name?.getText()}(${params.join(", ")}) -> ${ret};`);
     }
     if (ts.isInterfaceDeclaration(child)) {
       const params = child.typeParameters?.map((param) => param.getText());
@@ -168,7 +168,7 @@ function txModule(module: ts.Node, w: Writer): ts.Node {
   });
 
   const buf = `
-    pub mod ${module.name.getText()} {
+    pub mod ${module.name.text} {
       use wasm_bindgen::prelude::*;
 
       #[wasm_bindgen]
