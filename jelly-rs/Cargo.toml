@@ -29,6 +29,7 @@ anyhow = "1.0.69"
 syn = "1.0.107"
 quote = "1.0.23"
 paste = "1.0.11"
+proc-macro2 = "1.0.51"
 
 [dev-dependencies]
 wasm-bindgen-test = "0.3.13"

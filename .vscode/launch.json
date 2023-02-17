@@ -11,16 +11,28 @@
 			"name": "Launch TS2RS",
 			"target": "${workspaceFolder}/jelly-rs/target/debug/ts2rs",
 			"cwd": "${workspaceRoot}",
-			"valuesFormatting": "parseText"
+			"arguments": "node_modules/@types/vscode/index.d.ts",
+			"valuesFormatting": "parseText",
+			"preLaunchTask": "rust: cargo build",
+			"presentation": {
+				"hidden": false,
+				"group": "scripts",
+			}
 		},
 		{
-			"name": "Run Current File (TS-Node)",
+			"name": "TS2RS (TS) v2",
 			"type": "node",
 			"request": "launch",
 			"program": "${workspaceFolder}/node_modules/.bin/ts-node",
 			"args": [
-				"${file}"
+				"${workspaceRoot}/scripts/tsrs2.ts",
 			],
+      "outputCapture": "console",
+      "console": "integratedTerminal",
+			"presentation": {
+				"hidden": false,
+				"group": "scripts",
+			},
 			"enableTurboSourcemaps": true,
 		},
 		{
@@ -33,6 +45,9 @@
 			"outFiles": [
 				"${workspaceFolder}/dist/**/*.js"
 			],
+			"presentation": {
+				"group": "vscode",
+			},
 			"preLaunchTask": "${defaultBuildTask}"
 		},
 		{
@@ -47,6 +62,9 @@
 				"${workspaceFolder}/out/**/*.js",
 				"${workspaceFolder}/dist/**/*.js"
 			],
+			"presentation": {
+				"group": "vscode",
+			},
 			"preLaunchTask": "tasks: watch-tests"
 		}
 	]
