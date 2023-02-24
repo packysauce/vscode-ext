@@ -11,7 +11,7 @@ const extensionConfig: webpack.Configuration = {
     asyncWebAssembly: true,
     topLevelAwait: true,
   },
-  entry: "./src/extension.ts", // the entry point of this extension, 📖 -> https://webpack.js.org/configuration/entry-context/
+  entry: "./dist/index.js", // the entry point of this extension, 📖 -> https://webpack.js.org/configuration/entry-context/
   output: {
     // the bundle is stored in the 'dist' folder (check package.json), 📖 -> https://webpack.js.org/configuration/output/
     path: path.resolve(__dirname, "dist"),
@@ -45,9 +45,9 @@ const extensionConfig: webpack.Configuration = {
   },
   plugins: [
     new WasmPackPlugin({
-      crateDirectory: path.resolve(__dirname, "jelly-rs"),
-      watchDirectories: ["jelly-rs/src"],
-      outDir: path.resolve(__dirname, "dist/jelly-rs"),
+      crateDirectory: path.resolve(__dirname),
+      watchDirectories: ["src"],
+      outDir: path.resolve(__dirname, "dist/"),
     }),
   ],
 };

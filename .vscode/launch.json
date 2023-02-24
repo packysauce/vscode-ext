@@ -20,12 +20,12 @@
 			}
 		},
 		{
-			"name": "TS2RS (TS) v2",
+			"name": "Run Current File (TS)",
 			"type": "node",
 			"request": "launch",
 			"program": "${workspaceFolder}/node_modules/.bin/ts-node",
 			"args": [
-				"${workspaceRoot}/scripts/tsrs2.ts",
+				"${file}"
 			],
       "outputCapture": "console",
       "console": "integratedTerminal",
