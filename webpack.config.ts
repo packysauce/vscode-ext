@@ -1,8 +1,8 @@
 "use strict";
 
+import * as path from "path";
 import * as webpack from "webpack";
-import WasmPackPlugin = require("@wasm-tool/wasm-pack-plugin");
-import path = require("path");
+import WasmPackPlugin from  "@wasm-tool/wasm-pack-plugin";
 
 const extensionConfig: webpack.Configuration = {
   target: "node", // VS Code extensions run in a Node.js-context 📖 -> https://webpack.js.org/configuration/node/
@@ -11,10 +11,10 @@ const extensionConfig: webpack.Configuration = {
     asyncWebAssembly: true,
     topLevelAwait: true,
   },
-  entry: "./dist/index.js", // the entry point of this extension, 📖 -> https://webpack.js.org/configuration/entry-context/
+  entry: "./target/rs/index.js", // the entry point of this extension, 📖 -> https://webpack.js.org/configuration/entry-context/
   output: {
     // the bundle is stored in the 'dist' folder (check package.json), 📖 -> https://webpack.js.org/configuration/output/
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "target/dist"),
     filename: "extension.js",
     libraryTarget: "commonjs2",
   },
@@ -47,7 +47,7 @@ const extensionConfig: webpack.Configuration = {
     new WasmPackPlugin({
       crateDirectory: path.resolve(__dirname),
       watchDirectories: ["src"],
-      outDir: path.resolve(__dirname, "dist/"),
+      outDir: path.resolve(__dirname, "target/rs/"),
     }),
   ],
 };

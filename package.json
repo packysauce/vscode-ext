@@ -9,7 +9,7 @@
   "categories": [
     "Other"
   ],
-  "main": "./dist/extension.js",
+  "main": "./target/dist/extension.js",
   "contributes": {
     "commands": [
       {

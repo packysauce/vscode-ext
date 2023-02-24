@@ -2,8 +2,8 @@
 
 ## points of interest
 
-- `src/extension.ts` is the entry point for the extension
-- `jelly-rs` is where the rust is
+- `node_modules/@types/vscode/index.d.ts` is the vscode api
+- `src/lib.rs` is the entry point for the extension
 - `package.json:contributes` is where the extension is registered
 - `webpack.config.ts:plugins` is the plugin that tells webpack to bundle the rust
 
