@@ -6,34 +6,6 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"type": "lldb",
-			"request": "launch",
-			"name": "Launch TS2RS",
-			"program": "${workspaceFolder}/vscode-rust-base/target/debug/ts2rs",
-			"cwd": "${workspaceRoot}",
-			"args": "node_modules/@types/vscode/index.d.ts",
-			"preLaunchTask": "rust: cargo build",
-			"presentation": {
-				"hidden": false,
-				"group": "scripts",
-			}
-		},
-		{
-			"name": "Run Current File (TS)",
-			"type": "node",
-			"request": "launch",
-			"program": "${workspaceFolder}/node_modules/.bin/ts-node",
-			"args": [
-				"${file}"
-			],
-			"outputCapture": "console",
-			"console": "integratedTerminal",
-			"presentation": {
-				"hidden": false,
-				"group": "scripts",
-			},
-		},
-		{
 			"name": "Run Extension",
 			"type": "extensionHost",
 			"request": "launch",

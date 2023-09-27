@@ -1,5 +1,4 @@
 use std::mem::ManuallyDrop;
-
 use wasm_bindgen::prelude::*;
 
 // When the `wee_alloc` feature is enabled, use `wee_alloc` as the global
@@ -10,11 +9,11 @@ static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
 #[wasm_bindgen]
 pub fn activate() {
+  vscode::window::showInformationMessage("🦀 (activated) Hello from rust and {{project-name}}! 🦀");
   let greet_command = ManuallyDrop::new(Closure::new(|| {
-    vscode::window::showInformationMessage("Hello from Rust!");
+    vscode::window::showInformationMessage("🦀 (command) Closures work! 🦀");
   }));
-  vscode::window::showInformationMessage("The 🦋? Nut uh, that's old!");
-  vscode::commands::registerCommand("vscode-jelly.helloWorld", &greet_command);
+  vscode::commands::registerCommand("{{project-name}}.helloWorld", &greet_command);
 }
 
 #[wasm_bindgen]

@@ -1,5 +1,5 @@
 {
-  "name": "vscode-rust-base",
+  "name": "{{project-name}}",
   "displayName": "VSCode Rust Extension Base",
   "description": "A VSCode extension written in Rust",
   "version": "0.0.1",
@@ -15,12 +15,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "vscode-rust.helloWorld",
+        "command": "{{project-name}}.helloWorld",
         "title": "Rust: Hello World"
-      },
-      {
-        "command": "vscode-rust.showCanvas",
-        "title": "Rust: Show Canvas"
       }
     ]
   },

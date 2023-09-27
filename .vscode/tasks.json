@@ -39,27 +39,6 @@
 			"problemMatcher": [],
 			"label": "npm: compile",
 			"detail": "webpack"
-		},
-		{
-			"type": "cargo",
-			"options": {
-				"cwd": "${workspaceRoot}/jelly-rs"
-			},
-			"command": "build",
-			"args": [
-				"--bin",
-				"ts2rs"
-			],
-			"problemMatcher": [
-				{
-					"base": "$rustc",
-					"fileLocation": [
-						"relative",
-						"${workspaceRoot}/jelly-rs"
-					]
-				}
-			],
-			"label": "rust: cargo build"
 		}
 	]
 }
