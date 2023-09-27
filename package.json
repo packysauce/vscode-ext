@@ -1,24 +1,26 @@
 {
-  "name": "vscode-jelly",
-  "displayName": "jelly",
-  "description": "its kinda like a jam",
+  "name": "vscode-rust-base",
+  "displayName": "VSCode Rust Extension Base",
+  "description": "A VSCode extension written in Rust",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.75.0"
+    "vscode": "^1.82.0"
   },
   "categories": [
+    "Extension Packs",
+    "Programming Languages",
     "Other"
   ],
   "main": "./target/dist/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "vscode-jelly.helloWorld",
-        "title": "Jelly: Hello World"
+        "command": "vscode-rust.helloWorld",
+        "title": "Rust: Hello World"
       },
       {
-        "command": "vscode-jelly.showCanvas",
-        "title": "Jelly: Show Canvas"
+        "command": "vscode-rust.showCanvas",
+        "title": "Rust: Show Canvas"
       }
     ]
   },
@@ -34,22 +36,22 @@
     "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
-    "@types/glob": "^8.0.1",
+    "@types/glob": "^8.1.0",
     "@types/mocha": "^10.0.1",
-    "@types/node": "^16.18.12",
-    "@types/vscode": "^1.75.0",
-    "@types/webpack": "^5.28.0",
-    "@typescript-eslint/eslint-plugin": "^5.49.0",
-    "@typescript-eslint/parser": "^5.49.0",
-    "@vscode/test-electron": "^2.2.2",
-    "@wasm-tool/wasm-pack-plugin": "^1.6.0",
-    "eslint": "^8.33.0",
-    "glob": "^8.1.0",
-    "mocha": "^10.1.0",
-    "ts-loader": "^9.4.2",
+    "@types/node": "^20.6.1",
+    "@types/vscode": "^1.82.0",
+    "@types/webpack": "^5.28.2",
+    "@typescript-eslint/eslint-plugin": "^6.7.0",
+    "@typescript-eslint/parser": "^6.7.0",
+    "@vscode/test-electron": "^2.3.4",
+    "@wasm-tool/wasm-pack-plugin": "^1.7.0",
+    "eslint": "^8.49.0",
+    "glob": "^10.3.4",
+    "mocha": "^10.2.0",
+    "ts-loader": "^9.4.4",
     "ts-node": "^10.9.1",
-    "typescript": "^4.9.5",
-    "webpack": "^5.75.0",
+    "typescript": "^5.2.2",
+    "webpack": "^5.88.2",
     "webpack-cli": "^5.0.1"
   }
 }

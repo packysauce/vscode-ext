@@ -4,6 +4,7 @@
   "recommendations": [
     "dbaeumer.vscode-eslint",
     "amodio.tsl-problem-matcher",
-    "rust-lang.rust-analyzer"
+    "rust-lang.rust-analyzer",
+    "vadimcn.vscode-lldb"
   ]
 }
